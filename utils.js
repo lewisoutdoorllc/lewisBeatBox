@@ -31,8 +31,14 @@ class Button {
         this.keyCode = keyCode;
         this.element = document.getElementById(keyCode)
         this.setButtonColorInHTML();
-        
+        this.setTransitionEnd();
     }
+
+setTransitionEnd = () => {
+    this.element.addEventListener('transitionend', () => {
+        this.deselect()
+    })
+}
 
     /**
      * Set the button color based on color specified
